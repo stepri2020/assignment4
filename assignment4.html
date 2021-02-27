@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+    <title> Joe's Hotdog Stand </title>
+  </head>
+    <body>
+      <script language="javascript">
+        hotdogs = prompt("How many hotdogs would you like?", "");
+        fries = prompt("How many fries would you like?", "");
+        sodas = prompt("How many sodas would you like?", "");
+        total = (hotdogs * 3.25) + (fries * 2) + (sodas * 1.5);
+
+        document.write("Items Ordered: <br>");
+        if (hotdogs != 0) {
+          document.write("&nbsp; (" + hotdogs + "x) hotdogs<br>");
+        }
+        if (fries != 0) {
+          document.write("&nbsp; (" + fries + "x) fries<br>");
+        }
+        if (sodas != 0) {
+          document.write("&nbsp; (" + sodas + "x) sodas<br>");
+        }
+        total = total.toFixed(2);
+        document.write("Subtotal: " + total + "<br>");
+        discount = false;
+        if (total >= 20) {
+          saved = total * 0.1;
+          total *= 0.9;
+          discount = true;
+        }
+
+        if (discount) {
+          document.write("Discount: -" + saved.toFixed(2) + "<br>");
+        }
+        tax = total * .0625;
+        tax = tax.toFixed(2);
+        document.write("Tax: " + tax + "<br>");
+        total *= 1.0625;
+        document.write("Total: " + total.toFixed(2));
+
+        document.write("<br><br> Thank you for ordering!")
+      </script>
+  </body>
+</html>
